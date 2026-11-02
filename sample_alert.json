@@ -1,0 +1,8 @@
+{
+  "memo": "【entity-AWS¦canonical_name=AWS】 key planted in fake_project/.env",
+  "src_ip": "54.210.12.33",
+  "useragent": "【entity-aws¦canonical_name=AWS】-cli/2.15.0 Python/3.11",
+  "channel": "HTTP",
+  "time": "2026-05-11 10:21:00",
+  "note": "Sample payload from Thinkst Canarytoken - replace with real webhook when testing"
+}
