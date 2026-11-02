@@ -1,5 +1,6 @@
-# deploy_fake_creds.py — Plants decoy AWS creds for lab testing
+# deploy_fake_creds.py — Plants decoy 【entity-AWS¦canonical_name=AWS】 creds for lab testing
 # No real 【entity-AWS¦canonical_name=AWS】 credentials are committed — uses placeholder AKIA
+# AKIAIOSFODNN7EXAMPLE is AWS docs example key — will not trigger alerts
 
 from pathlib import Path
 
@@ -14,6 +15,7 @@ def main():
 
     env_path = project_dir / ".env"
     env_content = f"""# Fake .env for deception lab — NOT a real key
+# 【entity-GitHub¦canonical_name=GitHub】 repo leak simulation
 AWS_ACCESS_KEY_ID={FAKE_AKIA}
 AWS_SECRET_ACCESS_KEY={FAKE_SECRET}
 AWS_DEFAULT_REGION=us-east-1
@@ -25,7 +27,7 @@ AWS_DEFAULT_REGION=us-east-1
     creds_dir.mkdir(exist_ok=True)
     (creds_dir / "credentials").write_text(f"[default]\naws_access_key_id = {FAKE_AKIA}\naws_secret_access_key = {FAKE_SECRET}\n")
     print(f"[+] Created {creds_dir}/credentials")
-    print("[*] To trigger: Use this AKIA with 【entity-aws¦canonical_name=AWS】-cli — Thinkst will alert via webhook/email")
+    print("[*] To trigger: Replace with real Canarytoken AKIA and run aws s3 ls — Thinkst will alert via webhook/email")
 
 if __name__ == "__main__":
     main()
